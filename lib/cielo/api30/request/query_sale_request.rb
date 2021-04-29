@@ -13,7 +13,7 @@ module Cielo
         end
 
         def execute(payment_id)
-          uri = URI.parse("#{@environment.api_query}1/sales/#{payment_id}")
+          uri = URI.parse("#{@environment.api_query}/1/sales/#{payment_id}")
           Cielo::API30::Sale.from_json(send_request("GET", uri))
         end
       end
